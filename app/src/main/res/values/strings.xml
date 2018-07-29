@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Yara</string>
+
+    <!--bottom nav items-->
+    <string name="title_home">صفحه اصلی</string>
+    <string name="title_category">دسته بندی ها</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
