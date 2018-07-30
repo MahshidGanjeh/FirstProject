@@ -1,10 +1,16 @@
 package com.example.yara;
 
-public class User {
+import android.os.Parcelable;
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
+@Parcel
+public class User  {
     private String firstName;
     private String lastName;
     private String email;
 
+    @ParcelConstructor
     public User(String firstName, String lastName,String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,4 +41,5 @@ public class User {
     public String getEmail() {
         return email;
     }
+
 }

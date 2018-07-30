@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import org.parceler.Parcel;
+import org.parceler.Parcels;
+
 public class RegisterFragment extends Fragment {
 
     final String yaraLogoUrl = "http://yaramobile.com/templates/sj_hexagon/images/styling/blue/logo.png";
@@ -22,6 +25,15 @@ public class RegisterFragment extends Fragment {
     TextView mLastNameTextView;
     TextView mEmailTextView;
     Button mEnterBtn;
+
+    public static RegisterFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        RegisterFragment fragment = new RegisterFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 
     public RegisterFragment() {
@@ -39,6 +51,8 @@ public class RegisterFragment extends Fragment {
         mEmailTextView = result.findViewById(R.id.email_editText);
         mEnterBtn = result.findViewById(R.id.enter_btn);
 
+        Glide.with(this).load(yaraLogoUrl)
+                .into(mYaraLogoImageView);
 
         mEnterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,16 +61,10 @@ public class RegisterFragment extends Fragment {
                         mLastNameTextView.getText().toString(),
                         mEmailTextView.getText().toString());
                 Intent intent = new Intent(getActivity(), InfoActivity.class);
-                intent.putExtra("F", user.getFirstName());
-                intent.putExtra("L", user.getLastName());
-                intent.putExtra("E", user.getEmail());
-
+                intent.putExtra("user", Parcels.wrap(user));
                 startActivity(intent);
             }
         });
-
-        Glide.with(this).load(yaraLogoUrl)
-                .into(mYaraLogoImageView);
 
         return result;
     }

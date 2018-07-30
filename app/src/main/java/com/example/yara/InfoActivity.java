@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.parceler.Parcels;
+
 public class InfoActivity extends AppCompatActivity {
 
     TextView mFirstNameTextView;
@@ -19,8 +21,9 @@ public class InfoActivity extends AppCompatActivity {
         mLastNameTextView = findViewById(R.id.last_name_textView);
         mEmailTextView = findViewById(R.id.email_textView);
 
-        mFirstNameTextView.setText(getIntent().getExtras().get("F").toString());
-        mLastNameTextView.setText(getIntent().getExtras().get("L").toString());
-        mEmailTextView.setText(getIntent().getExtras().get("E").toString());
+        User user = Parcels.unwrap(getIntent().getParcelableExtra("user"));
+        mFirstNameTextView.setText(user.getFirstName());
+        mLastNameTextView.setText(user.getLastName());
+        mEmailTextView.setText(user.getEmail());
     }
 }
