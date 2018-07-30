@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/drawer_profile"
+        android:background="#fff"
+        android:title="@string/title_profile" />
+    <item
+        android:id="@+id/drawer_aboutus"
+        android:title="@string/title_aboutus" />
+    <item
+        android:id="@+id/drawer_calltous"
+        android:title="@string/title_calltous" />
+
+
+</menu>

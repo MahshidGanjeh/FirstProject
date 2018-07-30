@@ -1,5 +1,6 @@
 package com.example.yara;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -22,9 +23,15 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.navigation_home:
+                            case R.id.bottom_navigation_home:
+                                RegisterFragment registerFragment = new RegisterFragment();
+                                android.support.v4.app.FragmentManager fragmentManager2 = getSupportFragmentManager();
+                                fragmentManager2.beginTransaction().replace(R.id.fragment_container, registerFragment).commit();
                                 return true;
-                            case R.id.navigation_category:
+                            case R.id.bottom_navigation_category:
+                                CategoryFragment categoryFragment = new CategoryFragment();
+                                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                                fragmentManager.beginTransaction().replace(R.id.fragment_container, categoryFragment).commit();
                                 return true;
                             default:
                                 return false;
