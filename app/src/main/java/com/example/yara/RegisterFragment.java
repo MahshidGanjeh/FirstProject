@@ -65,7 +65,6 @@ public class RegisterFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         return result;
     }
 

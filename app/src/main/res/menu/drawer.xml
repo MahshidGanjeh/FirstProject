@@ -6,11 +6,12 @@
         android:background="#fff"
         android:title="@string/title_profile" />
     <item
-        android:id="@+id/drawer_aboutus"
-        android:title="@string/title_aboutus" />
-    <item
-        android:id="@+id/drawer_calltous"
+        android:id="@+id/drawer_contactus"
         android:title="@string/title_calltous" />
+    <item
+        android:id="@+id/drawer_aboutous"
+
+        android:title="@string/title_aboutus" />
 
 
 </menu>
