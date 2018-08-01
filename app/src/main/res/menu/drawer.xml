@@ -7,10 +7,9 @@
         android:title="@string/title_profile" />
     <item
         android:id="@+id/drawer_contactus"
-        android:title="@string/title_calltous" />
+        android:title="@string/title_contactus" />
     <item
         android:id="@+id/drawer_aboutous"
-
         android:title="@string/title_aboutus" />
 
 
