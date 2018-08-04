@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoActivity" />
-        <activity android:name="com.example.yara.Form.FormActivity"></activity>
+        <activity android:name=".Form.FormActivity" />
+        <activity android:name=".Retrofit.RetrofitActivity"></activity>
     </application>
 
 </manifest>

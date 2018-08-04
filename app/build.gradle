@@ -33,4 +33,11 @@ dependencies {
     implementation files('libs/glide-full-4.7.0-javadoc.jar')
     implementation 'org.parceler:parceler-api:1.1.11'
     annotationProcessor 'org.parceler:parceler:1.1.11'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    // JSON Parsing
+    implementation 'com.google.code.gson:gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    // recyclerview
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
 }

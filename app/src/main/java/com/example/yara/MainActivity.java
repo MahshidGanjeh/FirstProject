@@ -1,15 +1,19 @@
 package com.example.yara;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.yara.Form.FormActivity;
+import com.example.yara.Retrofit.RetrofitActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,10 +21,13 @@ public class MainActivity extends AppCompatActivity {
     NavigationView mDrawerNavigationView;
     DrawerLayout drawer;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 
         mBottomNavigationView = findViewById(R.id.bottom_navigation);
         mDrawerNavigationView = findViewById(R.id.drawer_navigation_view);
@@ -57,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentManager2.beginTransaction().replace(R.id.fragment_container, registerFragment).commit();
                                 return true;
                             case R.id.bottom_navigation_category:
-                                startActivity(new Intent(getApplicationContext(), FormActivity.class));
+                                startActivity(new Intent(getApplicationContext(), RetrofitActivity.class));
                                /* CategoryFragment categoryFragment = new CategoryFragment();
                                 android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                                 fragmentManager.beginTransaction().replace(R.id.fragment_container, categoryFragment).commit();

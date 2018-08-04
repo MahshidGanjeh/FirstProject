@@ -1,7 +1,10 @@
 package com.example.yara.Form;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.yara.R;
@@ -10,10 +13,13 @@ public class FormActivity extends AppCompatActivity
         implements Handler {
     String mName,mLastName;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+        //set the alignment of layouts to RTL
+        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 
         FirstNameFragment firstName = new FirstNameFragment();
         LastNameFragment lastName = new LastNameFragment();
