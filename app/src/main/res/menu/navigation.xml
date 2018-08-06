@@ -11,5 +11,10 @@
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
 
+    <item
+        android:id="@+id/bottom_navigation_users"
+        android:icon="@drawable/ic_users"
+        android:title="@string/title_users"></item>
+
 
 </menu>

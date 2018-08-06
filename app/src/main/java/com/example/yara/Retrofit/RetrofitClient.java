@@ -28,8 +28,8 @@ interface GetDataService {
     @GET("/users")
     Call<List<RetrofitUser>> getAllUsers();
 
-    @GET("/posts")
-    Call<List<Post>> getPosts();
+    @GET("/posts" )
+    Call<List<Post>> getPosts(@Query("userId") int userId);
 }
 
 

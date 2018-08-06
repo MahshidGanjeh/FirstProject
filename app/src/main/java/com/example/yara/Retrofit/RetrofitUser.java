@@ -4,6 +4,7 @@ class RetrofitUser {
 
     private String name;
     private String email;
+    private int id;
 
     public void setEmail(String email) {
         this.email = email;
@@ -29,5 +30,13 @@ class RetrofitUser {
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
